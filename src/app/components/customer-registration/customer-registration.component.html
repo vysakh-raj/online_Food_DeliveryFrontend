@@ -1,0 +1,10 @@
+<form (submit)="registerCustomer()">
+    <input type="text" [(ngModel)]="customer.name" name="name" placeholder="Name" required>
+    <input type="email" [(ngModel)]="customer.email" name="email" placeholder="Email" required>
+    <input type="password" [(ngModel)]="customer.password" name="password" placeholder="Password" required>
+    <input type="text" [(ngModel)]="customer.address" name="address" placeholder="Address" required>
+    <input type="text" [(ngModel)]="customer.phone" name="phone" placeholder="Phone" required>
+    <button type="submit">Register</button>
+  </form>
+ 
+    

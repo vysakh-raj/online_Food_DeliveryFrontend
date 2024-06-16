@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h2>Restaurant List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+          <td>{{ restaurant.restaurantId }}</td>
+          <td>{{ restaurant.name }}</td>
+          <td>{{ restaurant.address }}</td>
+          <td>{{ restaurant.phone }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

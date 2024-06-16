@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>My Orders</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Menu Item</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Restaurant</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.name }}</td>
+          <td>{{ order.description }}</td>
+          <td>{{ order.price }}</td>
+          <td>{{ order.restaurantName }}</td>
+          <td>
+            <button class="btn btn-success" (click)="payOrder(order)">Pay</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>All Orders</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Restaurant Name</th>
+          <th>Customer Name</th>
+          <th>Delivery Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          
+          <td>{{ order.menuId }}</td>
+          <td>{{ order.name }}</td>
+          <td>{{ order.description }}</td>
+          <td>{{ order.price }}</td>
+          <td>{{ order.restaurantName }}</td>
+          <td>{{ order.customerName }}</td>
+          <td>{{ order.deliverAddress }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

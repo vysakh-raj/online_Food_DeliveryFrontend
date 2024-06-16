@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Menu List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          
+          <th>Restaurant Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let menu of menus">
+          <td>{{ menu.name }}</td>
+          <td>{{ menu.description }}</td>
+          <td>{{ menu.price | currency }}</td>
+          
+          <td>{{ menu.restaurantName }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="updateMenu(menu.menuId!)">Update</button>
+            <button class="btn btn-danger" (click)="deleteMenu(menu.menuId!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Alert messages -->
+    <div *ngIf="successMessage" class="alert alert-success" role="alert">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+  </div>
+  

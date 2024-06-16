@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Menu List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Restaurant</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menu of menus">
+        <td>{{ menu.name }}</td>
+        <td>{{ menu.description }}</td>
+        <td>{{ menu.price }}</td>
+        <td>{{ menu.restaurantName }}</td>
+        <td>
+          <button (click)="openOrderForm(menu)"class="btn btn-primary">Place Order</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selectedMenu">
+    <h3>Place Order for {{ selectedMenu.name }}</h3>
+    <form (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" [(ngModel)]="customerName" name="customerName" required>
+      </div>
+      <div class="form-group">
+        <label for="deliveryAddress">Delivery Address:</label>
+        <input type="text" id="deliveryAddress" [(ngModel)]="deliveryAddress" name="deliveryAddress" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Order</button>
+    </form>
+  </div>
+</div>
+
